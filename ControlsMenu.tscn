@@ -1,0 +1,114 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Chicarego.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ControlsMenu.gd" type="Script" id=2]
+[ext_resource path="res://background-night-sky.png" type="Texture" id=3]
+[ext_resource path="res://Buttons1.tres" type="TileSet" id=4]
+[ext_resource path="res://Buttons2.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/sounds/Menu Select.wav" type="AudioStream" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://ChiKareGo2Font.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+font_data = SubResource( 1 )
+
+[node name="ControlsMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 845.0
+margin_bottom = 545.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 845.0
+margin_bottom = 545.0
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 845.0
+margin_bottom = 30.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Controles"
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 50.0
+margin_right = 845.0
+margin_bottom = 65.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/VBoxContainer2"]
+margin_right = 845.0
+margin_bottom = 15.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer2/CenterContainer2"]
+margin_left = 392.0
+margin_right = 452.0
+margin_bottom = 15.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/VBoxContainer2/CenterContainer2/VBoxContainer"]
+margin_right = 60.0
+margin_bottom = 15.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2/CenterContainer2/VBoxContainer/CenterContainer"]
+margin_right = 60.0
+margin_bottom = 15.0
+alignment = 2
+
+[node name="Selector" type="Label" parent="VBoxContainer/VBoxContainer2/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_right = 7.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 7, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = ">"
+valign = 2
+
+[node name="OptionName" type="Label" parent="VBoxContainer/VBoxContainer2/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_left = 11.0
+margin_right = 60.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 49, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Volver"
+valign = 2
+
+[node name="Buttons1" type="TileMap" parent="VBoxContainer"]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393220, 0, 0, 458755, 2, 0, 458756, 1, 0, 458757, 3, 0, 589828, 4, 0, 655363, 6, 0, 655364, 5, 0, 655365, 7, 0 )
+
+[node name="Movimiento" type="Label" parent="VBoxContainer/Buttons1"]
+margin_left = 30.7739
+margin_top = 76.4384
+margin_right = 118.774
+margin_bottom = 90.4384
+text = "Movimiento"
+uppercase = true
+
+[node name="Buttons2" type="TileMap" parent="VBoxContainer"]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393235, 0, 0 )
+
+[node name="Atacar" type="Label" parent="VBoxContainer/Buttons2"]
+margin_left = 290.863
+margin_top = 76.4384
+margin_right = 340.863
+margin_bottom = 90.4384
+text = "Atacar"
+uppercase = true
+
+[node name="MenuSelect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )

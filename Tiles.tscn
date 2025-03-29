@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/images/Buttons/Keyboard Extras.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9.01487, 8.28872 )
+
+[node name="Tiles" type="Node2D"]
+
+[node name="tile00" type="Sprite" parent="."]
+position = Vector2( 91.1841, 61.2554 )
+scale = Vector2( 3.41223, 3.48334 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 32, 16 )
+region_filter_clip = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="tile00"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tile00/Area2D"]
+position = Vector2( -0.871201, -0.565334 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
